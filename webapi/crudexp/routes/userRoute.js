@@ -33,5 +33,8 @@
 		app.get('/getItems',userController.getItems,function(req,res){
 
 		});
+		app.get('/getUpdatedItems',userController.getUpdatedItems,function(req,res){
+
+		});
 	}
 }())

@@ -72,4 +72,16 @@
 		exports.customerOrders=function(req,res){
 			res.render('../views/customer-orders.ejs',{mySession:req.mySession});
 		}
+		exports.getUpdatedItems=function(req,res){
+			var params={"user_db":req.body['user_db'],"merchantSku":req.body['merchantSku']};
+			console.log("params is"+JSON.stringify(params));
+			men.getOneRecord(params,function(err,data){
+				if(err){
+						res.send({"err":err,"data":""});
+				} else{
+					console.log("data is"+JSON.stringify(data))
+					res.send({"err":"",data});
+				}
+			})
+		}
 }())
